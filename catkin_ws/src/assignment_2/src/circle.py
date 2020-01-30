@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 import rospy
 from assignment_2.srv import MakeCircle
 
 def move_circle_client():
 	rospy.wait_for_service('move_circle')
 	try:
-		radius = float(input("Enter Radius :"))
-		speed = float(input("Enter Speed : "))
+		radius = rospy.get_param('/circle/r')
+		speed = rospy.get_param('/circle/s')
 		move_circle = rospy.ServiceProxy('move_circle',MakeCircle)
 		move_circle(speed,radius)
 

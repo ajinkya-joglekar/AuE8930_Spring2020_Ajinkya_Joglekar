@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import rospy
 from assignment_2.srv import MakeCircle
 from geometry_msgs.msg import Twist

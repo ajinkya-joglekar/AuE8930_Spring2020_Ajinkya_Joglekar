@@ -208,10 +208,8 @@ if __name__ == '__main__':
         pose_subscriber = rospy.Subscriber(position_topic, Pose, poseCallback) 
         time.sleep(2)
 
-        #move(1.0, 2.0, False)
-        #rotate(30, 90, True)
+
 	go_to_goal(5.0, 5.0)
-	#rotate(30, 90, True)
         setDesiredOrientation(math.radians(0))
         go_to_goal(8.0, 5.0)
         setDesiredOrientation(math.radians(90))
