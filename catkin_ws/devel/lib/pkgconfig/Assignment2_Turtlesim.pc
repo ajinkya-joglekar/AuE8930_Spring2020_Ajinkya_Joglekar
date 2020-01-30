@@ -1,0 +1,8 @@
+prefix=/home/ajoglek/AuE893_Spring20_Ajinkya_Joglekar/catkin_ws/devel
+
+Name: Assignment2_Turtlesim
+Description: Description of Assignment2_Turtlesim
+Version: 0.0.0
+Cflags: -I/home/ajoglek/AuE893_Spring20_Ajinkya_Joglekar/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
