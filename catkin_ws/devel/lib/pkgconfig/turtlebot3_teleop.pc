@@ -1,0 +1,8 @@
+prefix=/home/ajoglek/AuE893_Spring20_Ajinkya_Joglekar/catkin_ws/devel
+
+Name: turtlebot3_teleop
+Description: Description of turtlebot3_teleop
+Version: 1.2.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy geometry_msgs

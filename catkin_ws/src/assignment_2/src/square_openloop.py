@@ -33,6 +33,7 @@ def move_in_line(side_legnth,vel_msg,vel_publisher):
 
   while distance_travelled < side_legnth:
     vel_publisher.publish(vel_msg)
+    print(vel_msg.linear.x)
     t1 = rospy.Time.now().to_sec()
     distance_travelled = speed * (t1-t0)
 
