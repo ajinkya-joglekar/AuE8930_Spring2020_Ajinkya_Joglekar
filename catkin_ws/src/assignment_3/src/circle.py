@@ -1,18 +1,72 @@
 #!/usr/bin/env python
 import rospy
-from assignment_2.srv import MakeCircle
+from geometry_msgs.msg import Twist
+PI = 3.1415926535897
 
-def move_circle_client():
-	rospy.wait_for_service('move_circle')
-	try:
-		radius = rospy.get_param('/circle/r')
-		speed = rospy.get_param('/circle/s')
-		move_circle = rospy.ServiceProxy('move_circle',MakeCircle)
-		move_circle(speed,radius)
+def rotate():
 
-	except rospy.ServiceException, e:
-		print "Wrong service call"	
+    #Starts a new node
+    rospy.init_node('vel_club', anonymous=True)
+    velocity_publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+    vel_msg = Twist()
+    vel = 0.2
+
+    # Receiveing the user's input
+    print("Let's make a circle")
+    Radius = 2.0
+
+    
+    vel_msg.linear.x= vel
+    vel_msg.linear.y=0
+    vel_msg.linear.z=0
+    vel_msg.angular.x = 0
+    vel_msg.angular.y = 0
+
+    t0 = float(rospy.Time.now().to_sec())
+    current_distance = 0
+
+       
+    while(current_distance < Radius):
+           
+        velocity_publisher.publish(vel_msg)
+          
+        t1=float(rospy.Time.now().to_sec())
+           
+        current_distance= (vel)*(t1-t0)
+      
+    vel_msg.linear.x = 0
+       
+    velocity_publisher.publish(vel_msg)
+
+    angular_speed = abs(90*2*PI/360)
+    vel_msg.angular.z = angular_speed
+
+    t00 = rospy.Time.now().to_sec()
+    current_angle = 0
+    relative_angle = 90*2*PI/360
+
+    while(current_angle < relative_angle):
+        velocity_publisher.publish(vel_msg)
+        t11 = rospy.Time.now().to_sec()
+        current_angle = angular_speed*(t11-t00)
+
+
+    vel_msg.angular.z = 0
+    velocity_publisher.publish(vel_msg)
+    
+    dist = 5
+    k = 0
+   
+    while (k < dist):
+        vel_msg.linear.x= vel
+        vel_msg.angular.z = (vel)/(Radius)
+        velocity_publisher.publish(vel_msg)
+       
+    rospy.spin()
 
 if __name__ == '__main__':
-		#print ("Lets make a circle")
-		move_circle_client()		
+    try:
+        # Testing our function
+        rotate()
+    except rospy.ROSInterruptException:
+        pass

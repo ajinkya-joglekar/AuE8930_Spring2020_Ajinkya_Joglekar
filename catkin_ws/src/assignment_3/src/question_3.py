@@ -4,6 +4,7 @@ from geometry_msgs.msg  import Twist, Point
 from turtlesim.msg import Pose
 from math import pow,atan2,sqrt
 from sensor_msgs.msg import LaserScan
+import numpy as np
 
 dist = 10000000000
 
@@ -11,7 +12,14 @@ class turtlebot():
 
     def callback(msg):
         global dist
-	dist = min(msg.ranges)
+	distances = []
+    	head = msg.ranges[1:6]
+    	tail = msg.ranges[355:359]
+    	distances.extend(head)
+    	distances.extend(tail)
+    	dist = min(distances)
+	print("The min distance is " + str(dist))
+	
     
     rospy.init_node('vel_scan', anonymous=True)
     pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
@@ -20,7 +28,7 @@ class turtlebot():
     rate = rospy.Rate(10)
     move = Twist()
     
-    stop_dist = 0.5
+    stop_dist = 2
     while dist > stop_dist:
 	move.linear.x = 0.5
 	pub.publish(move)
