@@ -10,3 +10,11 @@ Necessary Commands:
 1. "roslaunch assignment_3 move.launch code:=square" (This command in terminal runs 'square.py' script in Gazebo) - The Turtlebot 3 burger traces a square of length 2 m with a linear speed of 0.2 m/s and turning at the vertices with the angular velocity of 0.2 rad/s.
 2. "roslaunch assignment_3 move.launch code:=circle" (This command in terminal runs 'circle.py' script in Gazebo) - The Turtlebot 3 burger traces a circular path of radius 2 m with angular velocity of 1.57 rad/s and linear velocity of 0.2 m/s.
 3. "roslaunch assignment_3 turtlebot3_wall.launch code:=question_3" (This command in terminal launches 'turtlebot3_wall.world' and runs 'question_3.py' script in Gazebo) - The Turtlebot 3 burger runs straight towards a wall at a linear velocity of 0.5 m/s and stops 2 m before the wall after scanning the obstruction.
+
+Team Contributions:
+Scripts for Assignment 3: Ajinkya Joglekar, Satya Rahul Jaladi, R Manas Macherla
+Launch Files: Ajinkya Joglekar, Shailendran Poyyamozhi, R Manas Macherla
+World Files: Ajinkya Joglekar, Siddhant Srivastava, Satya Rahul Jaladi
+Videos and Readme Files: Siddhant Srivastava, Shailendran Poyyamozhi
+Git Version Control: Ajinkya Joglekar
+
