@@ -13,7 +13,7 @@ def rotate():
 
     # Receiveing the user's input
     print("Let's make a circle")
-    Radius = 2.0
+    Radius = 0.2
 
     
     vel_msg.linear.x= vel

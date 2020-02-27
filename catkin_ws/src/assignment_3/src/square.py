@@ -10,10 +10,10 @@ def make_square():
   rospy.init_node('turtlebot_square', anonymous=True)
   vel_publisher = rospy.Publisher('/cmd_vel',Twist, queue_size = 10)
   vel_msg = Twist()
-  side_legnth = 2
+  side_legnth = .4
 
   current_rotation = 0
-  while current_rotation < 4:
+  while current_rotation < 16:
     move_in_line(side_legnth,vel_msg,vel_publisher)
     rotate(vel_msg,vel_publisher)
     current_rotation+=1

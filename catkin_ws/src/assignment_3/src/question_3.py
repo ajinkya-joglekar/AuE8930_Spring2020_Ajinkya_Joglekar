@@ -13,11 +13,11 @@ class turtlebot():
     def callback(msg):
         global dist
 	distances = []
-    	head = msg.ranges[1:6]
-    	tail = msg.ranges[355:359]
+    	head = msg.ranges[1:50]
+    	tail = msg.ranges[300:359]
     	distances.extend(head)
     	distances.extend(tail)
-    	dist = min(distances)
+    	dist = max(distances)
 	print("The min distance is " + str(dist))
 	
     
@@ -28,9 +28,9 @@ class turtlebot():
     rate = rospy.Rate(10)
     move = Twist()
     
-    stop_dist = 2
+    stop_dist = 0.5
     while dist > stop_dist:
-	move.linear.x = 0.5
+	move.linear.x = 0.2
 	pub.publish(move)
 	rate.sleep()
 	
