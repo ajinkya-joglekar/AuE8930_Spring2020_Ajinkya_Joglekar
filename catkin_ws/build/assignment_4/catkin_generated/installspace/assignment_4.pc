@@ -1,0 +1,8 @@
+prefix=/home/ajoglek/AuE893_Spring20_Ajinkya_Joglekar/catkin_ws/install
+
+Name: assignment_4
+Description: Description of assignment_4
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

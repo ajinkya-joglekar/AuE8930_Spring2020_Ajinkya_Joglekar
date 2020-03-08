@@ -1916,6 +1916,24 @@ assignment_3/preinstall:
 .PHONY : assignment_3/preinstall
 
 #=============================================================================
+# Directory level rules for directory assignment_4
+
+# Convenience name for "all" pass in the directory.
+assignment_4/all:
+
+.PHONY : assignment_4/all
+
+# Convenience name for "clean" pass in the directory.
+assignment_4/clean:
+
+.PHONY : assignment_4/clean
+
+# Convenience name for "preinstall" pass in the directory.
+assignment_4/preinstall:
+
+.PHONY : assignment_4/preinstall
+
+#=============================================================================
 # Directory level rules for directory turtlebot3/turtlebot3_bringup
 
 # Convenience name for "all" pass in the directory.
