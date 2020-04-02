@@ -38,10 +38,10 @@ The assignment contains three launch files:
 
 - The command for executing the above launch file is:
 
-$ roslaunch assignment5 turtlebot3_follow_line.launch
+$ roslaunch assignment5_trackingandfollowing turtlebot3_follow_line.launch
 
 
-**Part 1b: "urtlebot3_follow_line_realbot.launch"**
+**Part 1b: "turtlebot3_follow_line_realbot.launch"**
 
 - This part shows the practical implementation of the line following functionality shown in the above part
 
@@ -65,7 +65,7 @@ $ rosrun image_transport republish compressed in:=raspicam_node/image raw out:=r
 
 - Finally, the launch file can be executed: 
 
-$ roslaunch assignment_5 turtlebot3_follow_line_realbot.launch 
+$ roslaunch assignment5_trackingandfollowing turtlebot3_follow_line_realbot.launch 
 
 
 **Part 2: "april_tag_follow.launch"** 
@@ -93,7 +93,7 @@ $ rqt_image_view
 
 - Finally, the launch file can be executed: 
 
-$ roslaunch assignment_5 april_tag_follow.launch 
+$ roslaunch assignment5_trackingandfollowing april_tag_follow.launch 
 
 
 Description

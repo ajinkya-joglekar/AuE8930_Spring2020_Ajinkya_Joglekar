@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(assignment_5)
+project(assignment5_trackingandfollowing)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -103,8 +103,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES assignment_5
+  INCLUDE_DIRS include
+  LIBRARIES assignment5_trackingandfollowing
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
 )
