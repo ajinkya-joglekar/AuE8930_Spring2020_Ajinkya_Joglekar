@@ -20,7 +20,6 @@ for runnning the below (part 1a) files correctly, the following two files in the
 
 turtlebot3_burger.gazebo.xacro turtlebot3_burger.urdf.xacro
 
-These files can be found in this repository in the following path: src/fin_proj/camera_in_burger
 
 --------------------------------------------------------------------------------------
 ###### TINY YOLO PACKAGE INSTALLATION
